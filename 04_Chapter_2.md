@@ -10,7 +10,7 @@ Fedora以其尖端的特性，清晰的方向以及开放的开发模式而广�
 
 ## 1.2 在VMware中安装Fedora
 
-第一步：下载Fedora ISO文件：请访问https://getfedora.org/，选择您需要的 Fedora 版本，然后下载对应的 ISO 镜像文件。
+第一步：下载Fedora ISO文件：请访问[https://getfedora.org/](https://getfedora.org/)，选择您需要的 Fedora 版本，然后下载对应的 ISO 镜像文件。
 
 第二步：打开VMware：开启 VMware Workstation 或 VMware Player，然后点击“创建新虚拟机”。
 
