@@ -88,7 +88,7 @@ sudo apt-get install fcitx5 fcitx5-config-qt fcitx5-chinese-addons im-config
 
 配置fcitx5。点击系统托盘中的fcitx5图标，选择"Configure"。在弹出的配置界面中，你能添加，并配置你需要的输入法。
 
-## 1.5 尝试编译从代码编译fcitx5并打包
+## 1.5 尝试从debian源码仓库编译fcitx5并打包
 
 ### 1.5.1 打开debian系统源码仓库
 
