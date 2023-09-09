@@ -4,7 +4,7 @@
   * [序](00_xu.md)
   * [网友评论](01_wang-you-ping-lun.md)
   * [前言](02_qian-yan.md)
-  * [第1章 ](03_Chapter_1.md)
+  * [第1章 Debian系统安装及源码打包](03_Chapter_1.md)
   * [第2章 ](04_Chapter_2.md)
   * [第3章 ](05_Chapter_3.md)
   * [第4章 ](06_Chapter_4.md)

@@ -69,10 +69,17 @@ Debian系统中安装fcitx5的步骤如下：
 
 确保你的系统是最新的，你可以通过下面的命令更新你的系统：
 
+```
 sudo apt-get update
 sudo apt-get upgrade
+```
+
 安装fcitx5。用以下的命令安装fcitx5以及其相关的语言包（这里以中文为例）：
+
+```
 sudo apt-get install fcitx5 fcitx5-config-qt fcitx5-chinese-addons im-config
+```
+
 在你的会话（Session）开始程序中添加fcitx5。这个步骤取决于你的桌面环境，可能在"Startup Application settings"，"Session and Startup settings"等位置。
 
 运行im-config选择fcitx5，配置输入法环境变量。
@@ -89,23 +96,37 @@ sudo apt-get install fcitx5 fcitx5-config-qt fcitx5-chinese-addons im-config
 
 打开Terminal并键入以下命令以开始编辑Debian的源列表：
 
+```
 sudo nano /etc/apt/sources.list
+```
+
 找到文件中的每个deb行，并添加一个以deb-src开始的相似行进行源码下载。例如，如果你的文件中的一个行是：
 
+```
 deb http://deb.debian.org/debian/ buster main
+```
+
 那么你需要添加以下行：
 
+```
 deb-src http://deb.debian.org/debian/ buster main
+```
+
 需要注意的是，这个链接以及分发版本（比如buster）可能会根据你的Debian版本以及你所在的地理位置而有所不同。
 
 按下Ctrl + O保存对文件的更改，按下Ctrl + X退出编辑器。
 
 在Terminal键入以下命令，更新你的系统以反映对源列表的更改：
 
+```
 sudo apt-get update
+```
+
 现在，你应该可以使用apt-get source命令来下载Debian软件包的源码了。例如，如果你想下载fcitx5的源码，只需键入以下命令：
 
+```
 apt-get source fcitx5
+```
 
 ### 1.4.2 从Debian源码仓库编译及打包fcitx5
 
@@ -113,41 +134,57 @@ apt-get source fcitx5
 
 首先，你需要安装所需的工具和库。在终端中，运行以下命令：
 
+```
 sudo apt-get update
 sudo apt-get install build-essential
 sudo apt-get build-dep fcitx5
+```
 
 其次，从Debian源码仓库中获取最新的fcitx5源码：
 
+```
 apt-get source fcitx5
+```
 
 进入源码文件夹：
 
+```
 cd fcitx5*
+```
 
 创建一个build目录来编译源码：
 
+```
 mkdir build
 cd build
+```
 
 在build目录中，调用CMake来配置源码编译：
 
+```
 cmake ..
+```
 
 执行make命令来编译源码：
 
+```
 make
+```
 
 当然有时候我的编译的代码可能会和debian的代码有些差异。因为debian其中patch的原因。下面我用使用fcitx5源码尝试进行打包。
 
 安装打包所需要的工具：
 
+```
 sudo apt-get install devscripts build-essential debhelper
+```
 
 从源码创建 Debian 包：
 
+```
 cd fcitx5
 debuild -us -uc
+```
 
 这将在上层目录中创建 .deb 包文件，你可以使用 dpkg -i 命令来安装它。
 
