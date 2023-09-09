@@ -81,7 +81,7 @@ sudo apt-get install fcitx5 fcitx5-config-qt fcitx5-chinese-addons im-config
 
 配置fcitx5。点击系统托盘中的fcitx5图标，选择"Configure"。在弹出的配置界面中，你能添加，并配置你需要的输入法。
 
-## 1.4 尝试编译重代码编译fcitx5
+## 1.4 尝试编译从代码编译fcitx5并打包
 
 ### 1.4.1 打开debian系统源码仓库
 
@@ -153,4 +153,24 @@ debuild -us -uc
 
 Debian的deb包是Debian、Ubuntu以及其它基于Debian的Linux分发版中使用的软件包格式。deb包含了一款软件的所有文件，以及这款软件运行所需要的依赖关系等元信息。一旦安装，包管理器（如 APT）会处理这些依赖关系，并确保所有必要的包一起安装。deb包的名字通常采取此格式：“软件名_版本号_架构.deb”。
 
-其中debian系统fcitx5源码包仓库地址是https://salsa.debian.org/input-method-team/fcitx5。fcitx5的主仓库地址是https://github.com/fcitx/fcitx5。对比后我们发现debian系统fcitx5仓库多了一个debian文件夹，其中debian文件夹是debian系统的打包配置文件。
+其中[debian系统fcitx5源码包仓库地址](https://salsa.debian.org/input-method-team/fcitx5)。[fcitx5的主仓库地址](https://github.com/fcitx/fcitx5)。对比后我们发现debian系统fcitx5仓库多了一个debian文件夹，其中debian文件夹是debian系统的打包配置文件。
+
+## 源码包中的debian文件夹
+
+Debian源代码包含一个名为"debian"的文件夹，它包含所有与构建Debian包相关的必要信息和工具。下面是这个文件夹里一些重要文件的简单介绍：
+
+control: 这是一个必需的文件，包含了包的元数据，比如包名称，版本，依赖关系等等。
+
+rules: 该文件主要是一个Makefile，它定义了一套规则以构建二进制包。
+
+changelog: 这个文件记录的是软件包的版本历史，换句话说，它描述了每个版本的变动情况。
+
+compat: 这个文件只包含一个数字，这是用来说明软件包所需要的debhelper（一个用于打包的辅助工具）的版本。
+
+copyright: 这个文件包含关于软件包获取和使用的法律信息。
+
+patches: 在这个文件夹中包含了对源代码的修改。这些修改可以是对错误的修复，或对源代码中功能的改进。
+
+注意，debian文件夹中可能存在的其他文件和文件夹，就取决于特定的包和特定的打包需要了。例如，有时可能需要postinst、postrm、preinst和prerm等脚本，这些脚本在包安装或卸载之前或之后运行。
+
+通过学习和比较Debian源码包的配置以及build文件夹中的内容，我们可以更深入地理解Debian包的配置规则。看到优质的开源项目时，你也可以试图创建Debian文件夹，以此来丰富Debian社区的生态环境。
