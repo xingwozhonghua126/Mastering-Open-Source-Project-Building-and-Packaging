@@ -10,33 +10,33 @@ Fedora以其尖端的特性，清晰的方向以及开放的开发模式而广�
 
 ## 1.2 在VMware中安装Fedora
 
-第一步：下载Fedora ISO文件：请访问[https://getfedora.org/](https://getfedora.org/)，选择您需要的 Fedora 版本，然后下载对应的 ISO 镜像文件。
+1. 下载Fedora ISO文件：请访问[https://getfedora.org/](https://getfedora.org/)，选择您需要的 Fedora 版本，然后下载对应的 ISO 镜像文件。
 
-第二步：打开VMware：开启 VMware Workstation 或 VMware Player，然后点击“创建新虚拟机”。
+2. 打开VMware：开启 VMware Workstation 或 VMware Player，然后点击“创建新虚拟机”。
 
-第三步：选择安装方式：选择“典型”安装，然后点击“下一步”。
+3. 选择安装方式：选择“典型”安装，然后点击“下一步”。
 
-第四步：选择安装介质：选择“使用 ISO 镜像文件安装操作系统”选项，然后浏览到下载的 Fedora ISO 文件，点击“下一步”。
+4. 选择安装介质：选择“使用 ISO 镜像文件安装操作系统”选项，然后浏览到下载的 Fedora ISO 文件，点击“下一步”。
 
-第五步：设置虚拟机操作系统：选择“Linux”作为“操作系统类型”，然后在选择“版本”时，选择与你下载的Fedora版本尽可能相近的版本。
+5. 设置虚拟机操作系统：选择“Linux”作为“操作系统类型”，然后在选择“版本”时，选择与你下载的Fedora版本尽可能相近的版本。
 
-第六步：虚拟机名称和位置：输入你的虚拟机的名称并选择保存的位置。
+6. 虚拟机名称和位置：输入你的虚拟机的名称并选择保存的位置。
 
-第七步：指定磁盘容量：分配虚拟硬盘的大小，根据需求选择，一般20GB足以使用。 
+7. 指定磁盘容量：分配虚拟硬盘的大小，根据需求选择，一般20GB足以使用。 
 
-第八步：检查配置并完成： 点击“下一步”后，检查并确认虚拟机设定。若无问题，点击“完成”。
+8. 检查配置并完成： 点击“下一步”后，检查并确认虚拟机设定。若无问题，点击“完成”。
 
-第九步：启动Fedora安装：新建的虚拟机会出现在左侧列表中，选中并点击“开启此虚拟机”。进入后，会进入Fedora的安装界面，按照指示完成安装。
+9. 启动Fedora安装：新建的虚拟机会出现在左侧列表中，选中并点击“开启此虚拟机”。进入后，会进入Fedora的安装界面，按照指示完成安装。
 
-第十步：设置Fedora：安装完成后，会进入初始设置，包括创建用户账户密码、指定语言设置等。按步骤操作即可。
+10. 设置Fedora：安装完成后，会进入初始设置，包括创建用户账户密码、指定语言设置等。按步骤操作即可。
 
-第十一步：完成后，您的虚拟机中就成功安装了Fedora操作系统，你可以开始尝试使用了。
+11. 完成后，您的虚拟机中就成功安装了Fedora操作系统，你可以开始尝试使用了。
 
 ## 1.3 在Fedora中安装kde和fcitx5并正确配置
 
 以下是在Fedora中安装KDE和Fcitx5并进行配置的基本步骤：
 
-第一步：**安装KDE**
+1. **安装KDE**
    
 首先，你需要安装KDE环境。在终端中运行以下命令：
 
@@ -46,7 +46,7 @@ sudo dnf groupinstall "KDE Plasma Workspaces"
 
 然后，重启电脑并在登录画面选择KDE Plasma。
 
-第二步：**安装Fcitx5**
+2. **安装Fcitx5**
 
 其次，安装Fcitx5。在终端中运行以下命令：
 
@@ -54,7 +54,7 @@ sudo dnf groupinstall "KDE Plasma Workspaces"
 sudo dnf install fcitx5
 ```
 
-第三步：**配置Fcitx5**
+3. **配置Fcitx5**
 
 安装Fcitx5后，你需要为其创建一个配置文件。在终端中运行以下命令：
 
@@ -73,7 +73,7 @@ fcitx5 &
 
 保存并关闭文件。
 
-第四步：**启动Fcitx5**
+4. **启动Fcitx5**
 
 最后，启动Fcitx。在终端中运行以下命令：
 
@@ -83,25 +83,25 @@ fcitx5 &
 
 注意，你可能还需要安装和配置你需要的输入法引擎，例如 fcitx5-chinese-addons 为中文输入。
 
-## 1.4 尝试从fedora源码仓库编译fcitx5并打包
+## 1.4 尝试从 Fedora 源码仓库编译 Fcitx5 并打包
 
 ### 1.4.1 开启 Fedora 源代码仓库
 
 为了开启 Fedora 源代码仓库，请遵循以下步骤：
 
-第一步： 打开终端。
+1.  打开终端。
 
-第二步： 输入以下命令以打开 /etc/yum.repos.d/fedora.repo 文件：
+2.  输入以下命令以打开 /etc/yum.repos.d/fedora.repo 文件：
 
 ```
 sudo nano /etc/yum.repos.d/fedora.repo
 ```
 
-第三步：找到 [fedora-source] 部分，将 enabled 的值从 0 更改为 1。
+3. 找到 [fedora-source] 部分，将 enabled 的值从 0 更改为 1。
 
-第四步：保存并关闭文件。
+4. 保存并关闭文件。
 
-第五步：为了更新 repo 列表并同步系统，请运行：
+5. 为了更新 repo 列表并同步系统，请运行：
 
 ```
 sudo dnf update
@@ -109,32 +109,32 @@ sudo dnf update
    
 请注意，需要用于获取软件包源代码的命令是 dnf download --source <package>。这将下载一个 src.rpm 文件，其中包含软件包的源代码以及用于构建二进制包的脚本。
 
-### 1.4.2 从 Fedora 源代码仓库编译并打包 fcitx5
+### 1.4.2 从 Fedora 源代码仓库编译并打包 Fcitx5
 
 一般情况下，如果你想从源代码仓库获取一个 Fedora 软件包的 spec 文件，并根据它来构建一个 rpm 文件，你可以按照以下的步骤来操作：
 
-第一步： 安装必需的软件包
+1.  安装必需的软件包
 
 开启 Linux 终端并安装以下软件：
 ```sh
 sudo dnf install rpm-build rpmdevtools
 ```
 
-第二步： 创建 RPM 构建环境
+2.  创建 RPM 构建环境
 
 在你的主目录下设置构建环境：
 ```sh
 rpmdev-setuptree
 ```
 
-第三步：下载源代码仓库
+3. 下载源代码仓库
 
 此步骤主要针对 `fcitx5` 你需要找到对应的源代码仓库进行下载。如果它在 Fedora 的官方源中，你可以使用 `dnf` 来下载对应的源代码包。假设 `fcitx5` 在 Fedora 的官方源中：
 ```sh
 dnf download --source fcitx5
 ```
 
-第四步：解压缩源码包
+4. 解压缩源码包
 
 解压缩下载下来的 `fcitx5` 源码包，其中会包含 spec 文件：
 ```sh
@@ -142,13 +142,13 @@ rpm2cpio fcitx5-*.src.rpm | cpio -idmv
 ```
 此命令将会将源码包解压到当前目录，其中包含一个 `.spec` 文件。
 
-第五步： 将 spec 文件复制到 rpmbuild 的 SPEC 目录中：
+5.  将 spec 文件复制到 rpmbuild 的 SPEC 目录中：
 
 ```sh
 mv fcitx5.spec ~/rpmbuild/SPECS/
 ```
 
-第六步： 从 spec 文件生成二进制 rpm 文件：
+6.  从 spec 文件生成二进制 rpm 文件：
 你需要将你的目录切换到 spec 文件的目录下进行构建：
 ```sh
 cd ~/rpmbuild/SPECS/
@@ -156,7 +156,7 @@ rpmbuild -ba fcitx5.spec
 ```
 过程中可能提示你需要某些依赖包，你应该用 `dnf` 来安装这些依赖包。
 
-第七步： 如果一切顺利，你的 RPM 文件将被构建在 `~/rpmbuild/RPMS/` 目录及其子目录中。
+7.  如果一切顺利，你的 RPM 文件将被构建在 `~/rpmbuild/RPMS/` 目录及其子目录中。
 
 注意，这些步骤和细节可能因你使用的 Fedora 版本和 fcitx5 的具体情况而有所不同，需要你基于这个基本框架进行微调。
 
