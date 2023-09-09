@@ -28,7 +28,7 @@
 
 现在，你已经成功安装了VMware Workstation，并且可以开始创建和运行虚拟机了。
 
-## 1.2 在VMware中安装Debian
+## 1.3 在VMware中安装Debian
 
 下一步，我们将在Vmware环境中安装Debian。Debian有三种版本可供选择：稳定版（stable）、测试版（testing）和不稳定版（unstable）。作为初学者，建议我们首先选择稳定版进行学习和熟悉。等到后面需要学习并进行开源代码的编译构建时，我们可以将系统源切换至测试版，这样可以帮助我们更容易地构建并学习最新的源代码包。
 
@@ -61,7 +61,7 @@
 
 总的来说，虽然安装过程可能会有所不同，但基本上，这就是在VMware中安装Debian的步骤。
 
-## 1.3 在Debian中安装fcitx5
+## 1.4 在Debian中安装fcitx5
 
 Debian系统中安装fcitx5的步骤如下：
 
@@ -88,9 +88,9 @@ sudo apt-get install fcitx5 fcitx5-config-qt fcitx5-chinese-addons im-config
 
 配置fcitx5。点击系统托盘中的fcitx5图标，选择"Configure"。在弹出的配置界面中，你能添加，并配置你需要的输入法。
 
-## 1.4 尝试编译从代码编译fcitx5并打包
+## 1.5 尝试编译从代码编译fcitx5并打包
 
-### 1.4.1 打开debian系统源码仓库
+### 1.5.1 打开debian系统源码仓库
 
 在Debian中打开系统源码仓库的步骤如下：
 
@@ -128,7 +128,7 @@ sudo apt-get update
 apt-get source fcitx5
 ```
 
-### 1.4.2 从Debian源码仓库编译及打包fcitx5
+### 1.5.2 从Debian源码仓库编译及打包fcitx5
 
 为了从Debian源码仓库编译fcitx5，你可以按照以下步骤进行操作：
 
@@ -192,7 +192,7 @@ Debian的deb包是Debian、Ubuntu以及其它基于Debian的Linux分发版中使
 
 其中[debian系统fcitx5源码包仓库地址](https://salsa.debian.org/input-method-team/fcitx5)。[fcitx5的主仓库地址](https://github.com/fcitx/fcitx5)。对比后我们发现debian系统fcitx5仓库多了一个debian文件夹，其中debian文件夹是debian系统的打包配置文件。
 
-## 源码包中的debian文件夹
+## 1.6 源码包中的debian文件夹
 
 Debian源代码包含一个名为"debian"的文件夹，它包含所有与构建Debian包相关的必要信息和工具。下面是这个文件夹里一些重要文件的简单介绍：
 
